@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>
+        Html with Pyscript
+    </title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+
+<body>
+    <form onsubmit="return false">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" value="Prabhat kashyap"><br>
+        <select name="countries" id="countries">
+            <options value="India">India</options>
+            <option value="Germany">Germany</option>
+            <option value="NeitherLands">NeitherLands</option>
+        </select>
+        <input pys-onClick="sub" type="submit" id="btn-form" value="submit">
+    </form>
+    <p>Output:</p>
+    <p id = 'output'></p>
+    <py-script>
+        def sub(*args,**kwargs):
+            result_place = Element('output')
+            result_place.write(f"{Element('name').value} is a good human from {Element('countries')}")
+    </py-script>
+ </body>
+
+</html>
